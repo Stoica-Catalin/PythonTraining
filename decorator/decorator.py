@@ -21,102 +21,12 @@ def ro_id_interpeter(func):
                 year_of_birth="20"+year_of_birth
             print("Data nasterii: "+day_of_birth+"."+month_of_birth+"."+year_of_birth)
             county=cnp[7:9]
-            if county=="01":
-                print("Judet: Alba")
-            elif county=="02":
-                print("Judet: Arad")
-            elif county=="03":
-                print("Judet: Arges")
-            elif county=="04":
-                print("Judet: Bacău")
-            elif county=="05":
-                print("Judet: Bihor")
-            elif county=="06":
-                print("Judet: Bistrița-Năsăud")
-            elif county=="07":
-                print("Judet: Botoșani")
-            elif county=="08":
-                print("Judet: Brașov")
-            elif county=="09":
-                print("Judet: Brăila")
-            elif county=="10":
-                print("Judet: Buzău")
-            elif county=="11":
-                print("Judet: Caraș-Severin")
-            elif county=="12":
-                print("Judet: Cluj")
-            elif county=="13":
-                print("Judet: Constanța")
-            elif county=="14":
-                print("Judet: Covasna")
-            elif county=="15":
-                print("Judet: Dâmbovița")
-            elif county=="16":
-                print("Judet: Dolj")
-            elif county=="17":
-                print("Judet: Galați")
-            elif county=="18":
-                print("Judet: Gorj")
-            elif county=="19":
-                print("Judet: Harghita")
-            elif county=="20":
-                print("Judet: Hunedoara")
-            elif county=="21":
-                print("Judet: Ialomița")
-            elif county=="22":
-                print("Judet: Iași")
-            elif county=="23":
-                print("Judet: Ilfov")
-            elif county=="24":
-                print("Judet: Maramureș")
-            elif county=="25":
-                print("Judet: Mehedinți")
-            elif county=="26":
-                print("Judet: Mureș")
-            elif county=="27":
-                print("Judet: Neamț")
-            elif county=="28":
-                print("Judet: Olt")
-            elif county=="29":
-                print("Judet: Prahova")
-            elif county=="30":
-                print("Judet: Satu Mare")
-            elif county=="31":
-                print("Judet: Sălaj")
-            elif county=="32":
-                print("Judet: Sibiu")
-            elif county=="33":
-                print("Judet: Suceava")
-            elif county=="34":
-                print("Judet: Teleorman")
-            elif county=="35":
-                print("Judet: Timiș")
-            elif county=="36":
-                print("Judet: Tulcea")
-            elif county=="37":
-                print("Judet: Vaslui")
-            elif county=="38":
-                print("Judet: Vâlcea")
-            elif county=="39":
-                print("Judet: Vrancea")
-            elif county=="40":
-                print("București")
-            elif county=="41":
-                print("București - Sector 1")
-            elif county=="42":
-                print("București - Sector 2")
-            elif county=="43":
-                print("București - Sector 3")
-            elif county=="44":
-                print("	București - Sector 4")
-            elif county=="45":
-                print("București - Sector 5")
-            elif county=="46":
-                print("București - Sector 6")
-            elif county=="51":
-                print("Judet: Calarasi")
-            elif county=="52":
-                print("Judet: Giurgiu")
+            county_dict= {}
+            file = open("counties.txt")
+            for line in file:
+                word = line.split("=")
+                county_dict.update({word[0].strip(): word[1].strip()})
+            print("Judet: "+ d[county])
             nnn_component=cnp[9:12]
             print("Componenta pentru diferentiere: "+nnn_component)
             control_number=cnp[12:13]
